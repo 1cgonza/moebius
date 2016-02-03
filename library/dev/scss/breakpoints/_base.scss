@@ -1,0 +1,943 @@
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+html {
+  box-sizing: border-box;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjIiPjxwYXRoIGQ9Ik0tMiAxMEwxMCAtMlpNMTAgNkw2IDEwWk0tMiAyTDIgLTIiIHN0cm9rZT0iI2Y1ZjVmNSIgc3Ryb2tlLXdpZHRoPSIxLjUiPjwvcGF0aD4KPC9zdmc+'),
+  url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiPjwvc3RvcD4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRTZFNkU2Ij48L3N0b3A+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD4KPC9zdmc+')
+  no-repeat center center fixed;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $serif;
+  font-weight: 300;
+  font-size: 100%;
+  line-height: 1.5;
+  padding-bottom: 100px;
+
+  // remove all white spaces so inline-block will word as expected with % sizes
+  font-size: 0;
+
+  // restore size to inner containers
+  header, aside, main {
+    font-size: 16px;
+  }
+}
+
+a, a:visited {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: $link-hover;
+  }
+
+  &:link {
+    -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+  }
+}
+
+/*==========  TITLES  ==========*/
+h1, h2, h3, h4, h5 {
+  text-rendering: optimizelegibility;
+  font-weight: 400;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.333em;
+}
+
+h2 {
+  font-size: 1.75em;
+  line-height: 1.4em;
+  margin-bottom: 0.375em;
+}
+
+h3 {
+  font-size: 1.125em;
+}
+
+h4 {
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 0.846em;
+  line-height: 2.09em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/*==============================
+=            HEADER            =
+==============================*/
+.header {
+  font-size: 0;
+  background-color: black(0.02);
+
+  #logo, nav {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+  }
+
+  #logo {
+    padding: 20px;
+
+    img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+    }
+  }
+
+  nav {
+    text-align: center;
+    max-height: 0;
+    height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease-in-out;
+
+    ul {
+      list-style: none;
+      font-size: 13px;
+      padding: 0;
+
+      li {
+        a {
+          display: block;
+          text-decoration: none;
+          padding: 10px;
+          color: $black;
+          border-bottom: 1px solid;
+
+          &:hover,
+          &:focus {
+            color: lighten($black, 60%);
+          }
+        }
+
+        &.current-menu-item a, &.current_page_parent a {
+          background-color: $yellow;
+          color: black;
+        }
+      }
+    }
+
+    &.open {
+      max-height: 1500px;
+      height: auto;
+    }
+  }
+
+  #menu-icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 34px;
+    float: right;
+
+    span {
+      margin: 0 auto;
+      position: relative;
+      top: 12px;
+
+      &:before, &:after {
+        position: absolute;
+        content: '';
+      }
+
+      &:before {
+        margin-top: -12px;
+      }
+
+      &:after {
+        margin-top: 12px;
+      }
+    }
+
+    span, span:before, span:after {
+      width: 30px;
+      height: 4px;
+      background-color: $black;
+      display: block;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    &.open {
+      span, span:before, span:after {
+        background-color: darken($yellow, 10%);
+      }
+    }
+  }
+
+  .search-wrapper {
+    vertical-align: middle;
+  }
+}
+
+/*=====  End of HEADER  ======*/
+
+/*=========================================
+=            REPEATABLE STYLES            =
+=========================================*/
+.content-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+main {
+  margin: 35.2px auto;
+
+  &.loading {
+    opacity: 0.3;
+  }
+
+  iframe {
+    height: 450px;
+    width:100%;
+  }
+}
+
+.page-header {
+  text-align: center;
+}
+
+.page-title {
+  border-right: 3px solid;
+  border-left: 3px solid;
+  display: inline-block;
+  padding: 0 0.5em;
+}
+
+.title-higlight {
+  border-bottom: 3px solid $yellow;
+}
+
+.summary-info {
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+  }
+
+  .cat-item {
+    margin: 0.1em;
+    a {
+      padding: 0 0.2em;
+    }
+    &:not(:last-child) {
+      &::after {
+        content: ' | '
+      }
+    }
+  }
+
+  .current-cat a {
+    border-bottom: 3px solid $yellow;
+    color: $black;
+  }
+
+  &.moebius-years li, &.moebius-years a {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.share-icon {
+  background: transparent !important;
+  padding: 14px 5px 0 !important;
+
+  &:before {
+    color: $black;
+  }
+}
+
+.highlight-btn {
+  font-size: 0.9em;
+  margin: 3em 0;
+
+  a {
+    transition: background-color 0.2s ease-out;
+    background-color: $link-color;
+    color: $white;
+    padding: 0.8em;
+
+    &:hover {
+      background-color: $link-hover;
+      color: $white;
+    }
+  }
+}
+
+.entry-footer {
+  font-size: 16px;
+  display: table;
+  margin: 2em auto;
+  text-align: center;
+  padding-bottom: 1em;
+  border-bottom: 1px dotted;
+
+  .footer-box {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+/*=====  End of REPEATABLE STYLES  ======*/
+
+/*=====================================
+=            ENTRY CONTENT            =
+=====================================*/
+.entry-content {
+  font-size: 1.15em;
+  line-height: 1.9;
+
+  ul {
+    list-style: none;
+    padding-left: 10px;
+  }
+
+  li {
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      border: 1px solid;
+      vertical-align: middle;
+      border-radius: 50%;
+      top: 0.8em;
+      left: -10px;
+    }
+  }
+
+  dd {
+    margin-left: 0;
+    font-size: 0.9em;
+    color: #787878;
+    margin-bottom: 1.5em;
+  }
+
+  img {
+    margin: 0 0 1.5em 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  video, object {
+    max-width: 100%;
+    height: auto;
+  }
+
+  pre {
+    background: #eee;
+    border: 1px solid #cecece;
+    padding: 10px;
+  }
+}
+
+/*=====  End of ENTRY CONTENT  ======*/
+
+
+/*===============================
+=            ARCHIVE            =
+===============================*/
+.archive-header {
+  text-align: center;
+  margin: 0.5em 0 2em;
+}
+/*=====  End of ARCHIVE  ======*/
+
+
+/*=======================================
+=            MOEBIUS GALLERY            =
+=======================================*/
+.moebius-gallery {
+  font-size: 0;
+  text-align: center;
+
+  // Reset size
+  header, article, ul {
+    font-size: 16px;
+  }
+
+  article {
+    padding: 1%;
+    position: relative;
+    text-align: left;
+
+    section {
+      vertical-align: middle;
+      font-size: 0.9em;
+    }
+
+    .summary-info {
+      font-size: 0.9em;
+      margin: 0;
+    }
+
+    .gallery-item-img {
+      line-height: 0;
+      position: relative;
+      padding-bottom: 56%;
+      height: 0;
+      overflow: hidden;
+      background-color: black;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .gallery-item-content {
+      border-left: 1px dotted $tomato;
+      border-right: 1px dotted $tomato;
+      border-bottom: 1px dotted $tomato;
+      padding: 1.3em;
+    }
+
+    .moebius-years {
+      margin-bottom: 0.5em;
+    }
+
+    .gallery-item-title {
+      margin: 0;
+      font-size: 1.3em;
+    }
+
+    /*----------  TEXTOS POST TYPE  ----------*/
+    &.type-textos {
+      .gallery-item-content {
+        border: 1px dotted $blue;
+      }
+    }
+
+    /*----------  GENERAL GALLERY RESULT HEADER  ----------*/
+    .gallery-post-type {
+      background-color: $light-gray;
+      display: block;
+      padding: 0.3em 1em;
+      font-size: 0.8em;
+      border: 1px solid;
+      text-align: right;
+    }
+
+    &.type-post {
+      .gallery-post-type {
+        background-color: $blue;
+        color: $white;
+        border: 0;
+      }
+    }
+
+    &.type-videos {
+      .gallery-post-type {
+        background-color: $tomato;
+        color: $white;
+        border: 0;
+      }
+    }
+
+    &.type-textos {
+      .gallery-post-type {
+        background-color: $blue;
+        color: $white;
+        border: 0;
+      }
+    }
+  }
+}
+/*-----  End of MOEBIUS GALLERY  ------*/
+
+/*==================================
+=            PAGINATION            =
+==================================*/
+ul.page-numbers {
+  list-style: none;
+  margin: 2em auto 4em;
+  padding: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    margin: 0 0.2em;
+
+    a, a:visited {
+      padding: 0.3em;
+      border: 1px dotted black(0.2);
+
+      &:hover, &:focus {
+        background-color: $link-color;
+        color: $white;
+      }
+    }
+
+  }
+}
+
+/*-----  End of PAGINATION  ------*/
+
+/*===============================
+=            FILTERS            =
+===============================*/
+#filters {
+  background-color: black(0.02);
+  padding-bottom: 1em;
+  margin-bottom: 2em;
+  text-align: center;
+
+  &.no-sidebar {
+    display: none;
+  }
+
+  .filters-text {
+    display: inline-block;
+    font-size: 1.3em;
+    padding-right: 0.3em;
+  }
+
+  #filters-nav {
+    display: inline-block;
+  }
+}
+
+#filters-options {
+  list-style: none;
+  padding: 0;
+
+  li {
+    transition: all 0.2s ease;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5em;
+    margin-right: 0.2em;
+    border: 1px dotted;
+
+    &:hover {
+      background-color: $white;
+    }
+
+    &.current {
+      border: 2px solid;
+    }
+
+    &.open {
+      background-color: $yellow;
+    }
+
+    &#filter-btn-todos {
+      padding-left: 0.3em;
+    }
+  }
+}
+
+#filter-contents {
+  position: relative;
+  text-align: left;
+
+  .filter-section {
+    position: absolute;
+    font-size: 0.85em;
+    display: none;
+
+    .terms-list {
+      list-style: none;
+      margin: 0;
+      padding: 0 0.5em;
+
+      li.cat-item {
+        display: inline-block;
+        margin: 0.2em;
+        padding: 0.3em;
+        border: 1px dotted #CCC;
+        vertical-align: top;
+
+        &.current-cat {
+          background-color: $yellow;
+        }
+      }
+
+      /*----------  AUTHORS  ----------*/
+      .authors-group {
+        position: relative;
+        margin-bottom: 1.5em;
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+
+        h4 {
+          position: absolute;
+          font-size: 5em;
+          margin: 0;
+          padding: 0;
+          width: 1em;
+          text-align: center;
+          left: -0.2em;
+          top: -0.3em;
+          color: black(0.1);
+        }
+
+        ul {
+          padding: 1em 1em 1em 4em;
+        }
+      }
+    }
+  }
+}
+
+
+/*-----  End of FILTERS  ------*/
+
+/*=====================================
+=            SINGLE VIDEOS            =
+=====================================*/
+.video-container {
+  padding: 0 20%;
+  margin: -2.2em auto 0 auto;
+  background-color: black;
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.single-videos {
+  .hentry {
+    font-size: 0;
+  }
+
+  .article-header, #respond, .commentlist {
+    font-size: 14px;
+  }
+
+  .entry-content {
+    font-size: 16px;
+  }
+
+  .article-header {
+    @include tomate-bg;
+    text-align: right;
+    padding: 2em;
+    display: inline-block;
+    vertical-align: top;
+
+    h2 {
+      margin: 0;
+    }
+
+    .moebius-years {
+      margin: 0;
+    }
+  }
+
+  .entry-content {
+    display: inline-block;
+    padding: 1em 3em;
+  }
+
+  .entry-footer {
+    margin-top: 3em;
+  }
+}
+
+/*=====  End of SINGLE VIDEOS  ======*/
+
+/*============================
+=            BLOG            =
+============================*/
+.blog, .author-moebius {
+  .post-thumbnail {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .entry-header {
+    text-align: center;
+
+    .entry-title {
+      font-weight: 100;
+    }
+
+    .byline {
+      font-size: 0.9em;
+      color: $meta-gray;
+    }
+  }
+
+  .entry-header, .entry-content {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .entry-content {
+    .highlight-btn {
+      text-align: center;
+      display: block;
+    }
+  }
+
+  .entry-footer {
+    width: 100%;
+  }
+}
+
+
+/*=====  End of BLOG  ======*/
+
+/*===================================
+=            SINGLE POST            =
+===================================*/
+.single-post {
+  header {
+    text-align: center;
+    margin-bottom: 3em;
+
+    .byline {
+      font-size: 0.9em;
+      color: $meta-gray;
+      margin-top: 0;
+    }
+  }
+
+  .entry-content {
+    margin-bottom: 3em;
+  }
+
+  .entry-footer {
+    width: 100%;
+  }
+}
+
+
+/*=====  End of SINGLE POST  ======*/
+
+/*============================
+=            TEXT            =
+============================*/
+.post-type-archive-textos {
+  article {
+    text-align: center;
+  }
+}
+
+
+/*=====  End of TEXT  ======*/
+
+
+/*===================================
+=            SINGLE TEXT            =
+===================================*/
+.single-textos {
+  header {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+}
+
+
+/*=====  End of SINGLE TEXT  ======*/
+
+/*============================
+=            HOME            =
+============================*/
+.home {
+  main {
+    font-size: 0;
+    text-align: center;
+  }
+
+  .home-section {
+    font-size: 16px;
+  }
+
+  .home-post-wrapper article {
+    padding: 1em;
+    width: 100%;
+  }
+
+  .home-section-title {
+    font-size: 28px;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .home-featured-post {
+    .gallery-item-content {
+      border: 0;
+      @include tomate-bg;
+    }
+  }
+
+  .blog {
+    float: right;
+    background-color: black(0.02);
+
+    .entry-footer {
+      width: 100%;
+    }
+  }
+
+  .home-more-link {
+    display: block;
+
+
+    a {
+      transition: background-color 0.2s ease-out;
+      display: block;
+      background-color: transparent;
+      border: 1px solid;
+      margin: 1em;
+      padding: 1em;
+      font-size: 1.2em;
+      color: black;
+
+      &:hover {
+        background-color: $link-color;
+        color: $white;
+        border-color: $link-color;
+      }
+    }
+  }
+
+}
+
+/*=====  End of HOME  ======*/
+
+/*==============================
+=            SEARCH            =
+==============================*/
+.search-results {
+  .moebius-gallery {
+    article {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+/*=====  End of SEARCH  ======*/
+
+
+/*===========================
+=            404            =
+===========================*/
+.error404 {
+  text-align: center;
+}
+
+/*=====  End of 404  ======*/
+
+
+// --------------------------------------------------------------
+
+.wp-caption {
+  max-width: 100%;
+  background: #eee;
+  padding: 5px;
+
+  /* images inside wp-caption */
+  img {
+    max-width: 100%;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  p.wp-caption-text {
+    font-size: 0.85em;
+    margin: 4px 0 7px;
+    text-align: center;
+  }
+
+} /* end .wp-caption */
+
+
+.page-navigation,
+.wp-prev-next {
+  margin: 1.1em 0 2.2em;
+}
+
+.moebius_page_navi {
+  li {
+    float: left;
+    margin-left: 10px;
+
+    a {
+      padding: 3px 6px;
+      display: block;
+      text-decoration: none;
+      position: relative;
+
+      &:hover,
+      &:focus {
+        color: #f01d4f;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* current page link */
+  li.bpn-current {
+    padding: 3px 6px;
+    border-bottom: 2px solid #f01d4f;
+    position: relative;
+  } /* end .bones_page_navi .bpn-current */
+
+  /* common styles for page-navi links */
+  li.bpn-prev-link,
+  li.bpn-next-link {
+    font-weight: 700;
+
+    a {
+      padding: 0;
+    }
+  }
+
+  /* remove the bg on end links */
+  li.bpn-prev-link a:hover,
+  li.bpn-next-link a:hover,
+  li.bpn-first-page-link a:hover,
+  li.bpn-last-page-link a:hover {
+    background: none;
+  }
+
+} // end .moebius_page_navi
+
+
+

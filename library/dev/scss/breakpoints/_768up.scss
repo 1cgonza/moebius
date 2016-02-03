@@ -1,0 +1,93 @@
+.alignleft, img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left;
+}
+
+.alignright, img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right;
+}
+
+.aligncenter, img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
+
+.content-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/*==============================
+=            HEADER            =
+==============================*/
+#menu-icon {
+  display: none;
+}
+
+.header {
+  nav {
+    max-height: 1500px;
+    height: auto;
+
+    ul {
+      display: block;
+      li {
+        display: inline-block;
+        position: relative;
+
+        a {
+          border-bottom: 0;
+        }
+
+        &.current-menu-item a, &.current_page_parent a {
+          border-bottom: 3px solid $yellow;
+          background-color: transparent;
+        }
+      }
+
+      li+li:before {
+        content: '\∞';
+        color: darken($yellow, 12%);
+        display: inline-block;
+        position: absolute;
+        top: 12px;
+        left: -6px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .search-wrapper {
+    .search-field {
+      width: 60%;
+      position: absolute;
+      right: 0;
+
+      &:focus,
+      &:active {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/*=====  End of HEADER  ======*/
+
+
+
+
+/*============================
+=            BLOG            =
+============================*/
+.blog, .author-moebius {
+  .entry-header, .entry-content {
+    width: 100%;
+    margin: 0;
+  }
+}
+/*=====  End of BLOG  ======*/

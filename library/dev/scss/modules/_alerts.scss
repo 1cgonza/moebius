@@ -1,0 +1,29 @@
+%alert {
+  border: 1px solid;
+  margin: 10px;
+  padding: 5px 18px;
+}
+
+.alert-help {
+  @extend %alert;
+  background: $alert-yellow;
+  border-color: darken($alert-yellow, 5%);
+}
+
+.alert-info {
+  @extend %alert;
+  background: $alert-blue;
+  border-color: darken($alert-blue, 5%);
+}
+
+.alert-error {
+  @extend %alert;
+  background: $alert-red;
+  border-color: darken($alert-red, 5%);
+}
+
+.alert-success {
+  @extend %alert;
+  background: $alert-green;
+  border-color: darken($alert-green, 5%);
+}

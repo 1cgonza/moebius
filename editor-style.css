@@ -1,0 +1,13 @@
+@import url( 'library/css/style.min.css' );
+
+body.mce-content-body {
+  padding: 0 1.5em 1em !important;
+  background-color: transparent;
+  font-size: 18.4px;
+  line-height: 1.9;
+}
+
+iframe {
+  height: 450px;
+  width: 100%;
+}

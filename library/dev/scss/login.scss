@@ -1,0 +1,64 @@
+@import 'partials/variables';
+@import 'partials/typography';
+@import 'partials/mixins';
+@import 'modules/buttons';
+
+#login {
+  font-family: $serif;
+  padding: 7% 0 0;
+  font-size: 14px;
+
+  h1 a {
+    background: url(../images/moebius-logo-320px.png) no-repeat top center;
+    width: 320px;
+    height: 111px;
+    text-indent: -9999px;
+    overflow: hidden;
+    padding-bottom: 15px;
+    display: block;
+  }
+
+  form {
+    margin: 0;
+    padding: .5em;
+    font-weight: normal;
+    background: none;
+    border: none;
+
+    -webkit-box-shadow: none;
+     -khtml-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+  }
+
+  label {
+    text-align: center;
+  }
+
+  form .input {
+    font-weight: normal;
+    font-size: 1em;
+    padding: .7em;
+    border: none;
+    background: #ededed;
+    outline: none;
+    -webkit-box-shadow: none;
+     -khtml-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+  }
+
+  #wp-submit {
+    @extend .black-btn;
+    text-shadow: none;
+  }
+
+  #login_error, .message {
+    border: 0;
+    background-color: $yellow;
+    -webkit-box-shadow: none;
+     -khtml-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+  }
+}
