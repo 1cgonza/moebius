@@ -55,7 +55,7 @@ function moebius_scripts_and_styles() {
       wp_enqueue_script( 'comment-reply' );
     }
 
-    wp_register_script('moebius-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true);
+    wp_register_script('moebius-js', get_stylesheet_directory_uri() . '/library/js/scripts.min.js', array( 'jquery' ), '', true);
     // Google Fonts
     wp_register_style('google-fonts', 'http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,400');
 
@@ -73,6 +73,7 @@ function moebius_scripts_and_styles() {
 function moebius_theme_support() {
   add_theme_support('post-thumbnails');
   set_post_thumbnail_size(125, 125, true);
+  add_image_size('moebius-square', 600, 600, true);
   add_theme_support('automatic-feed-links');
 
   // output the following with HTML5 syntax.
