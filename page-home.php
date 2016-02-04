@@ -11,29 +11,6 @@
     'post_type' => 'post',
     'posts_per_page' => 5
   );
-
-  function get_home_section_post($query) {
-    global $post;
-
-    $isFirstPost = $query->current_post == 0 ? true : false;
-    $postClass = $isFirstPost ? 'home-featured-post' : 'home-regular-post m-all t-all d-1of2 ld-1of2';
-    // $imgSize = $isFirstPost ? 'medium-large' : 'medium';
-
-    $article = '<article class="'. $postClass . '">';
-      $article .= '<header class="home-post-img">';
-        $article .= '<a href="'. get_the_permalink() .'">' . get_the_post_thumbnail($post->ID, 'medium-large') . '</a>';
-      $article .= '</header>';
-
-      $article .= '<section class="home-post-title">';
-        $article .= '<h3 class="gallery-item-title" itemprop="headline" rel="bookmark">';
-          $article .= '<a href="' . get_the_permalink() . '">' . get_the_title() . '</a>';
-        $article .= '</h3>';
-      $article .= '</section>';
-
-    $article .= '</article>';
-
-    return $article;
-  }
 ?>
 
 <main id="main" class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
