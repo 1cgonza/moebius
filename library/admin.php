@@ -99,12 +99,12 @@ function moebius_register_user_profile_metabox() {
     $cmb_user->add_field( array(
       'name' => 'Rol',
       'desc' => '',
-      'id'   => $prefix . 'role',
+      'id'   => $prefix . 'group',
       'type' => 'select',
       'show_option_none' => true,
       'options' => array(
-        'principal'   => 'Equipo Principal',
-        'colaborador' => 'Colaborador',
+        '1' => 'Equipo Principal',
+        '2' => 'Colaborador',
       ),
     ) );
 
