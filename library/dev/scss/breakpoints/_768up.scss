@@ -78,9 +78,6 @@
 
 /*=====  End of HEADER  ======*/
 
-
-
-
 /*============================
 =            BLOG            =
 ============================*/
@@ -91,3 +88,26 @@
   }
 }
 /*=====  End of BLOG  ======*/
+
+/*=============================
+=            ABOUT            =
+=============================*/
+.page-template-page-about {
+  .author-section {
+    .author-info {
+      padding: 0 2em;
+    }
+
+    .author-name {
+      margin: 0;
+      font-size: 1.3em;
+    }
+
+    // .author-role {
+    //   margin-top: 0;
+    //   font-style: italic;
+    // }
+  }
+}
+
+/*=====  End of ABOUT  ======*/

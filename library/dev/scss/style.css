@@ -1890,6 +1890,48 @@ ul.page-numbers li a:hover, ul.page-numbers li a:focus, ul.page-numbers li a:vis
 }
 
 /*=====  End of HOME  ======*/
+/*=============================
+=            ABOUT            =
+=============================*/
+.page-template-page-about .about-team-group {
+  margin: 3em auto;
+}
+.page-template-page-about .group-title {
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 1px dotted;
+  color: #9fa6b4;
+  font-size: 1.2em;
+  font-weight: 100;
+}
+.page-template-page-about .author-section {
+  font-size: 0;
+  margin-bottom: 65px;
+}
+.page-template-page-about .author-section img {
+  max-width: 100%;
+  height: auto;
+}
+.page-template-page-about .author-section > div {
+  font-size: 16px;
+}
+.page-template-page-about .author-section .author-img {
+  margin: 0 auto;
+  text-align: center;
+  line-height: 0;
+}
+.page-template-page-about .author-section .author-img img {
+  width: 100%;
+}
+.page-template-page-about .author-section .author-name {
+  margin-bottom: 0;
+}
+.page-template-page-about .author-section .author-role {
+  margin-top: 0;
+  font-style: italic;
+}
+
+/*=====  End of ABOUT  ======*/
 /*==============================
 =            SEARCH            =
 ==============================*/
@@ -2048,6 +2090,18 @@ ul.page-numbers li a:hover, ul.page-numbers li a:focus, ul.page-numbers li a:vis
   }
 
   /*=====  End of BLOG  ======*/
+  /*=============================
+  =            ABOUT            =
+  =============================*/
+  .page-template-page-about .author-section .author-info {
+    padding: 0 2em;
+  }
+  .page-template-page-about .author-section .author-name {
+    margin: 0;
+    font-size: 1.3em;
+  }
+
+  /*=====  End of ABOUT  ======*/
 }
 @media only screen and (min-width: 1030px) {
   .content-wrapper {
