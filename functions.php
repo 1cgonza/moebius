@@ -137,8 +137,9 @@ function moebius_remove_wp_ver_css_js($src) {
 ===============================================================*/
 function buildABC ($list) {
   $dom = new DOMDocument();
-  $dom->loadHTML($list);
+  $dom->loadHTML( remove_accents($list) );
   $groups = $dom->getElementsByTagName('li');
+  unset($dom);
   $abc = [];
   $ret = '';
   $listArr = explode('</li>', $list);
