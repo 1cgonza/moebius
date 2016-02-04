@@ -65,7 +65,7 @@ function moebius_register_user_profile_metabox() {
   ) );
 
   $cmb_user->add_field( array(
-    'name'     => 'Informacion Adicional para usuarios de Moebius Animaci&oacute;n',
+    'name'     => 'Informaci&oacute;n Adicional para usuarios de Moebius Animaci&oacute;n',
     'desc'     => 'Esta informaci&oacute; sera visible en algunas de las paginas, por ejemplo en Quienes Somos.',
     'id'       => $prefix . 'extra_info_title',
     'type'     => 'title',
