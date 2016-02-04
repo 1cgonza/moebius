@@ -2012,6 +2012,10 @@ ul.page-numbers li a:hover, ul.page-numbers li a:focus, ul.page-numbers li a:vis
   background: none;
 }
 
+.xdebug-var-dump {
+  font-size: 16px;
+}
+
 @media only screen and (min-width: 768px) {
   .alignleft, img.alignleft {
     margin-right: 1.5em;
