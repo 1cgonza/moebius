@@ -1710,7 +1710,6 @@ ul.page-numbers li a:hover, ul.page-numbers li a:focus, ul.page-numbers li a:vis
 =====================================*/
 .video-container {
   padding: 0 20%;
-  margin: -2.2em auto 0 auto;
   background-color: black;
 }
 .video-container .video-wrapper {
@@ -1728,6 +1727,9 @@ ul.page-numbers li a:hover, ul.page-numbers li a:focus, ul.page-numbers li a:vis
   height: 100%;
 }
 
+.single-videos main {
+  margin-top: 0;
+}
 .single-videos .hentry {
   font-size: 0;
 }

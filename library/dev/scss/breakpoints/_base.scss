@@ -614,7 +614,6 @@ ul.page-numbers {
 =====================================*/
 .video-container {
   padding: 0 20%;
-  margin: -2.2em auto 0 auto;
   background-color: black;
 
   .video-wrapper {
@@ -635,6 +634,10 @@ ul.page-numbers {
 }
 
 .single-videos {
+  main {
+    margin-top: 0;
+  }
+
   .hentry {
     font-size: 0;
   }

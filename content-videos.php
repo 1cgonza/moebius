@@ -5,11 +5,13 @@ $tax      = ['director', 'technique', 'country', 'prod_year'];
 $meta     = moebius_get_fields($tax);
 ?>
 
+<?php  if ($video) : ?>
 <div class="video-container">
   <div class="video-wrapper">
     <?php echo apply_filters( 'the_content', $video ); ?>
   </div>
 </div>
+<?php endif; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
   <header class="article-header m-all t-1of2 d-1of3 ld-1of3">
