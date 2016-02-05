@@ -38,8 +38,8 @@ function custom_post_types() {
       'has_archive'         => 'videos',
       'capability_type'     => 'post',
       'hierarchical'        => false,
-      'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky' ),
-      'taxonomies'          => array( 'post_tag' )
+      'supports'            => array( 'title', 'thumbnail', 'comments', 'revisions', 'sticky' ),
+      // 'taxonomies'          => array( 'post_tag' )
     )
   );
 
@@ -72,7 +72,7 @@ function custom_post_types() {
       'has_archive'         => 'textos',
       'capability_type'     => 'post',
       'hierarchical'        => false,
-      'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions', 'sticky'),
+      'supports'            => array( 'title', 'thumbnail', 'comments', 'revisions', 'sticky'),
       'taxonomies'          => array( 'post_tag' )
     )
   );
