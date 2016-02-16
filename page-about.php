@@ -49,7 +49,7 @@
       if ( array_key_exists($groups['colaborators'], $authors) ) : ?>
       <section class="about-team-group">
         <h2 class="group-title">Colaboradores</h2>
-        <?php echo build_authors_group( $authors[$groups['principal']] ); ?>
+        <?php echo build_authors_group( $authors[$groups['colaborators']] ); ?>
       </section>
       <?php endif; ?>
 
