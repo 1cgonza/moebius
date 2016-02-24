@@ -177,8 +177,8 @@ function moebius_page_nav() {
       'prev_text' => '&larr;',
       'next_text' => '&rarr;',
       'type'      => 'list',
-      'end_size'  => 3,
-      'mid_size'  => 3
+      'end_size'  => 4,
+      'mid_size'  => 4
     ) );
 
     echo $newNav;
@@ -189,36 +189,6 @@ function moebius_page_nav() {
 /*===========================================
 =            GET TAXONOMIES INFO            =
 ===========================================*/
-function moebius_get_taxonomies_info($taxonomies) {
-  global $post;
-  $terms = [];
-
-  if ( !is_array($taxonomies) ) {
-    return;
-  } else {
-    foreach ($taxonomies as $taxonomy) {
-      $postTermsIDs = wp_get_post_terms( $post->ID, $taxonomy, array('fields' => 'ids') );
-
-      if ( !is_wp_error($postTermsIDs) ) {
-        $order = $taxonomy == 'prod_year' ? 'DESC' : 'ASC';
-        $args = array(
-          'orderby'    => 'name',
-          'order'      => $order,
-          'echo'       => 0,
-          // 'show_count' => 1,
-          'include'    => implode(',', $postTermsIDs),
-          'title_li'   => '',
-          'taxonomy'   => $taxonomy
-        );
-
-        $terms[$taxonomy] = wp_list_categories($args);
-      }
-    }
-  }
-
-  return $terms;
-}
-
 function moebius_get_fields ($tax) {
   if ( !is_array($tax) ) {
     return;
