@@ -5,6 +5,9 @@ $excerpt = '';
 
 if ($postType == 'post') {
   $headerText = 'Blog';
+  $date = get_the_time('j \d\e\ F \d\e\ Y ');
+  $postAuthor = get_the_author_meta('display_name', $post->post_author);
+  $excerpt = get_the_excerpt();
 }
 elseif ($postType == 'videos') {
   $headerText = 'Video';
@@ -18,8 +21,6 @@ elseif ($postType == 'textos') {
   $excerpt = custom_excerpt( get_post_meta($post->ID, '_cmb2_resumen', true), 40 );
   $tax  = ['director', 'prod_year'];
   $meta = moebius_get_fields($tax);
-} else {
-  $excerpt = get_the_excerpt();
 }
 ?>
 
@@ -35,7 +36,12 @@ elseif ($postType == 'textos') {
     <h2 class="entry-title" itemprop="headline" rel="bookmark">
       <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
     </h2>
-    <?php if ($postType == 'videos') : ?>
+
+    <?php if ($postType == 'post') : ?>
+    <p class="summary-info"><time datetime="<?php echo $date; ?>"><?php echo $date; ?></time></p>
+    <p class="summary-info">Por: <a href="<?php get_author_posts_url( $post->post_author ); ?>"><?php echo $postAuthor; ?></a></p>
+
+    <?php elseif ($postType == 'videos') : ?>
     <ul class="summary-info moebius-years">
       <?php echo $meta['prod_year']; ?>
     </ul>

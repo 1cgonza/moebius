@@ -1530,7 +1530,7 @@ main iframe {
 }
 .moebius-gallery article .summary-info {
   font-size: 0.9em;
-  margin: 0;
+  margin: .5em 0 0;
 }
 .moebius-gallery article .gallery-item-img {
   line-height: 0;
@@ -1553,9 +1553,6 @@ main iframe {
   border-bottom: 1px dotted #FF6347;
   padding: 1.3em;
 }
-.moebius-gallery article .moebius-years {
-  margin-bottom: 0.5em;
-}
 .moebius-gallery article .gallery-item-title {
   margin: 0;
   font-size: 1.3em;
@@ -1572,7 +1569,7 @@ main iframe {
   text-align: right;
 }
 .moebius-gallery article.type-post .gallery-post-type {
-  background-color: #3B7995;
+  background-color: #231F20;
   color: #fff;
   border: 0;
 }
