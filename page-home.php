@@ -44,7 +44,7 @@
   $queryBlog = new WP_Query($bArgs);
 
   if ( $queryBlog->have_posts() ) : ?>
-    <section id="recent-posts" class="home-section blog m-all t-all d-2of5 ld-1of4">
+    <section id="recent-posts" class="home-section blog m-all t-all d-2of5 ld-1of3">
       <h2 class="home-section-title page-title">Entradas Recientes</h2>
 
       <?php while ( $queryBlog->have_posts() ) :

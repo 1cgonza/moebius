@@ -804,7 +804,58 @@ ul.page-numbers {
 
   .blog {
     float: right;
-    background-color: black(0.02);
+
+    .home-post-wrapper {
+      padding-top: 16px;
+    }
+
+    article {
+      padding: 0;
+      margin-bottom: 1em;
+      background-color: black(0.02);
+    }
+
+    .entry-header, .entry-content {
+      padding: 0 1em;
+    }
+
+    .entry-footer {
+      border: 0;
+      margin: 0 auto;
+    }
+
+    .entry-title {
+      font-size: 1.3em;
+      text-align: left;
+      font-weight: 400;
+    }
+
+    .byline {
+      text-align: left;
+      margin-top: 0;
+
+      .post-date {
+        display: inline;
+      }
+    }
+
+    .post-thumbnail {
+      line-height: 0;
+      position: relative;
+      padding-bottom: 56%;
+      height: 0;
+      overflow: hidden;
+      background-color: black;
+      display: block;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
 
     .entry-footer {
       width: 100%;

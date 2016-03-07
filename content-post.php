@@ -5,8 +5,8 @@
     <p class="byline bypostauthor">
       <?php
         $date = get_the_time('j \d\e\ F \d\e\ Y ');
-        $byLine = 'Publicado el <time class="updated" datetime="' . $date . '">' . $date . '</time>';
-        $byLine .= 'por <a href="' . get_author_posts_url( get_the_author_meta('ID') ) . '">' . get_the_author_meta('display_name') . '</a>';
+        $byLine = '<span class="post-date">Publicado el <time class="updated" datetime="' . $date . '">' . $date . '</time></span>';
+        $byLine .= '<span class="post-author">por <a href="' . get_author_posts_url( get_the_author_meta('ID') ) . '">' . get_the_author_meta('display_name') . '</a></span>';
         echo $byLine;
       ?>
     </p>

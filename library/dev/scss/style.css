@@ -1862,7 +1862,49 @@ ul.page-numbers li a:hover, ul.page-numbers li a:focus, ul.page-numbers li a:vis
 }
 .home .blog {
   float: right;
+}
+.home .blog .home-post-wrapper {
+  padding-top: 16px;
+}
+.home .blog article {
+  padding: 0;
+  margin-bottom: 1em;
   background-color: rgba(0, 0, 0, 0.02);
+}
+.home .blog .entry-header, .home .blog .entry-content {
+  padding: 0 1em;
+}
+.home .blog .entry-footer {
+  border: 0;
+  margin: 0 auto;
+}
+.home .blog .entry-title {
+  font-size: 1.3em;
+  text-align: left;
+  font-weight: 400;
+}
+.home .blog .byline {
+  text-align: left;
+  margin-top: 0;
+}
+.home .blog .byline .post-date {
+  display: inline;
+}
+.home .blog .post-thumbnail {
+  line-height: 0;
+  position: relative;
+  padding-bottom: 56%;
+  height: 0;
+  overflow: hidden;
+  background-color: black;
+  display: block;
+}
+.home .blog .post-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
 }
 .home .blog .entry-footer {
   width: 100%;
