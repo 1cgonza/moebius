@@ -4,7 +4,7 @@
 
   $vArgs = array(
     'post_type' => 'videos',
-    'posts_per_page' => 5
+    'posts_per_page' => 13
   );
 
   $bArgs = array(
