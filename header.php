@@ -25,6 +25,7 @@
     <meta name="theme-color" content="#202020">
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <meta property="fb:app_id" content="906071909507916" />
     <?php wp_head(); ?>
   </head>
 
