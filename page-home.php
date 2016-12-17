@@ -28,7 +28,7 @@
         $postClass = $isFirstPost ? 'home-post-wrapper moebius-gallery home-featured-post' : 'home-post-wrapper moebius-gallery home-regular-post m-all t-all d-1of2 ld-1of2';
 
         echo '<div class="' . $postClass . '">';
-        get_template_part( 'gallery', 'videos' );
+        get_template_part( 'layouts/gallery', 'videos' );
         echo '</div>';
         endwhile;
       ?>
@@ -53,7 +53,7 @@
         $postClass = 'home-post-wrapper moebius-gallery home-regular-post';
 
         echo '<div class="' . $postClass . '">';
-        get_template_part( 'gallery', 'post' );
+        get_template_part( 'layouts/gallery', 'post' );
         echo '</div>';
         endwhile;
 

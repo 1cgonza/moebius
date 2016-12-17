@@ -2,10 +2,10 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
-    jsDev: 'library/dev/js/',
-    jsPub: 'library/js/',
-    cssDev: 'library/dev/scss/',
-    cssPub: 'library/css/',
+    jsDev: 'dev/js/',
+    jsPub: 'js/',
+    cssDev: 'dev/scss/',
+    cssPub: 'css/',
     pkg: grunt.file.readJSON('package.json'),
 
     concat: {

@@ -1,9 +1,9 @@
 <?php
-require_once('library/admin.php');
+require_once('utils/admin.php');
 
 function moebius_init() {
 	add_editor_style();
-	require_once('library/custom-post-type.php');
+	require_once('utils/custom-post-type.php');
 	add_action( 'init', 'moebius_head_cleanup' );
 	add_action( 'wp_enqueue_scripts', 'moebius_scripts_and_styles', 999 );
 	moebius_theme_support();
@@ -49,13 +49,13 @@ function moebius_scripts_and_styles() {
   global $wp_styles;
 
   if ( !is_admin() ) {
-    wp_register_style('moebius-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.min.css', array(), '', 'all');
+    wp_register_style('moebius-stylesheet', get_stylesheet_directory_uri() . '/css/style.min.css', array(), '', 'all');
 
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
       wp_enqueue_script( 'comment-reply' );
     }
 
-    wp_register_script('moebius-js', get_stylesheet_directory_uri() . '/library/js/scripts.min.js', array( 'jquery' ), '', true);
+    wp_register_script('moebius-js', get_stylesheet_directory_uri() . '/js/scripts.min.js', array( 'jquery' ), '', true);
     // Google Fonts
     wp_register_style('google-fonts', 'http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,400');
 
