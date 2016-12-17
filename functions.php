@@ -241,7 +241,7 @@ function add_current_nav_class($classes, $item) {
   global $post;
 
   if ($post) {
-    $customPostTypes = array ('videos', 'textos');
+    $customPostTypes = array ('videos', 'textos', 'eventos');
     $currentPostType = get_post_type($post->ID);
     $currentPostType = $currentPostType == 'post' ? 'blog' : $currentPostType;
     $menuSlug = strtolower( trim($item->url) );

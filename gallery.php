@@ -22,6 +22,12 @@ elseif ($postType == 'textos') {
   $tax  = ['director', 'prod_year'];
   $meta = moebius_get_fields($tax);
 }
+elseif ($postType == 'eventos') {
+  $headerText = 'Evento';
+  $excerpt = custom_excerpt( get_post_meta($post->ID, '_cmb2_descripcion', true), 40 );
+  // $tax  = ['director', 'prod_year'];
+  // $meta = moebius_get_fields($tax);
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('m-all t-1of2 d-1of2 ld-1of3'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">

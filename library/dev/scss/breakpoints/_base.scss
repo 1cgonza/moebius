@@ -197,6 +197,11 @@ h5 {
 .content-wrapper {
   width: 90%;
   margin: 0 auto;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 main {
@@ -459,6 +464,13 @@ main {
       .gallery-post-type {
         background-color: $blue;
         color: $white;
+        border: 0;
+      }
+    }
+
+    &.type-eventos {
+      .gallery-post-type {
+        background-color: #D6C41F;
         border: 0;
       }
     }

@@ -1362,6 +1362,10 @@ h5 {
   width: 90%;
   margin: 0 auto;
 }
+.content-wrapper img {
+  max-width: 100%;
+  height: auto;
+}
 
 main {
   margin: 35.2px auto;
@@ -1581,6 +1585,10 @@ main iframe {
 .moebius-gallery article.type-textos .gallery-post-type {
   background-color: #3B7995;
   color: #fff;
+  border: 0;
+}
+.moebius-gallery article.type-eventos .gallery-post-type {
+  background-color: #D6C41F;
   border: 0;
 }
 
