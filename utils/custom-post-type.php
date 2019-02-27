@@ -79,6 +79,16 @@ function custom_post_types() {
 }
 add_action( 'init', 'custom_post_types');
 
+/*----------  TEMAS Y PROBLEMAS  ----------*/
+moebius_register_taxonomy(
+  'themes',
+  'Temas y Problemas',
+  'Temas y Problemas',
+  array('videos', 'textos'),
+  'temas-problemas',
+  false
+);
+
 /*----------  YEARS  ----------*/
 moebius_register_taxonomy(
   'prod_year',

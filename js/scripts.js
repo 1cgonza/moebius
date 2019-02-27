@@ -19,14 +19,16 @@ URL: http://juancgonzalez.com
 
       $btn.on('click', function() {
         $(this).toggleClass('open');
-        $('#filters-options li').not(this).removeClass('open');
-        $container.animate({height: $content.height() + 'px'}, 'fast');
+        $('#filters-options li')
+          .not(this)
+          .removeClass('open');
+        $container.animate({ height: $content.height() + 'px' }, 'fast');
 
         if ($(this).hasClass('open')) {
           $sections.not($content).fadeOut('fast');
           $content.fadeIn('slow');
         } else {
-          $container.animate({height: 0}, 'fast');
+          $container.animate({ height: 0 }, 'fast');
           $sections.fadeOut('fast');
           return;
         }
@@ -44,6 +46,5 @@ URL: http://juancgonzalez.com
       $(this).toggleClass('open');
       $('#main-nav').toggleClass('open');
     });
-
   });
-}(jQuery));
+})(jQuery);

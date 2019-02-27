@@ -4,7 +4,7 @@
 =            CUSTOM LOGIN            =
 ====================================*/
 function moebius_login_css() {
-  wp_enqueue_style( 'moebius-login', get_template_directory_uri() . '/library/css/login.min.css', false );
+  wp_enqueue_style( 'moebius-login', get_template_directory_uri() . '/css/login.min.css', false );
 }
 
 function moebius_login_url() {
